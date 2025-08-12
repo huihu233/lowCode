@@ -7,6 +7,14 @@ import tsParser from '@typescript-eslint/parser';
 
 export default [
   {
+    files: ['**/*.config.js', '**/*.config.ts'], // <-- 关键修改在这里
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+    },
+  },
+  {
     languageOptions: {
       globals: {
         // ...globals.browser, // 通常在推荐配置中已包含，可以省略
